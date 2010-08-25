@@ -2,7 +2,7 @@ source :gemcutter
 source "http://gems.github.com"
 
 gem 'treetop', '1.4.8'
-gem 'json_pure', '1.4.3'
+gem 'json_pure', '1.4.6'
 gem 'pg', '0.9.0', :require => false
 gem 'rails', '2.3.8', :require => false
 gem 'mislav-will_paginate', '~> 2.3.11', :require => 'will_paginate'
@@ -17,9 +17,14 @@ gem 'rack', '1.1.0'
 gem 'capistrano', '2.5.17', :require => false
 gem 'cap_gun', '0.2.2', :require => false
  
-group "test" do
+
+group :test, :cucumber do
+  gem 'email_spec', '0.6.3', :require => false
+end
+
+group :test do
   gem 'ffaker', '0.3.5'
-  gem 'mocha', '0.9.7' 
+  gem 'mocha', '0.9.8' 
   gem 'ruby2ruby', '1.2.4'
   gem 'flog', '2.2.0', :require => false
   gem 'flay', '1.4.0', :require => false
@@ -30,17 +35,15 @@ group "test" do
   gem 'relevance-tarantula', '0.3.3', :require => false
   gem 'hpricot', '0.8.2', :require => false # required for tarantula 0.3.3
   gem 'thoughtbot-factory_girl', "1.2.2", :require => 'factory_girl'
-  gem 'rspec', '1.2.9', :require => false
-  gem 'rspec-rails', '1.2.9', :require => false
-  gem 'email_spec', '0.6.2', :require => false
+  gem 'rspec', '1.3.0', :require => false
+  gem 'rspec-rails', '1.3.2', :require => false
 end
 
-group "cucumber" do
+group :cucumber do
   gem 'cucumber', '0.8.3', :require => false
   gem 'cucumber-rails', '0.3.2', :require => false
   gem 'database_cleaner', '0.5.2', :require => false
-  gem 'launchy', '0.3.5', :require => false
+  gem 'launchy', '0.3.7', :require => false
   gem 'mechanize', '1.0.0', :require => false
   gem 'webrat', '0.7.0', :require => false
-  gem 'email_spec', '0.6.2', :require => false
 end
